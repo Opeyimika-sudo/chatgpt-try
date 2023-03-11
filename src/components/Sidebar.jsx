@@ -12,12 +12,12 @@ export default function Sidebar({toggler, setToggler}) {
   
 
   return (
-    <div className='w-3/5 sm:w-2/5 absolute flex'
+    <div className='w-3/5 md:w-2/5 absolute h-full'
       style={{
-        zIndex: 1000,
+        zIndex: size.width < 768 ? 1000 : 1,
       }}>
       <div className='w-4/5 flex-col justify-between border-white/20  h-screen bg-gray-900 text-white relative' style={{
-        display: size.width < 640 ? (toggler ? "flex"  :"none") : "inline-flex",
+        display: size.width < 768 ? (toggler ? "flex"  :"none") : "inline-flex",
       }}>
         <button className='w-4/5 mx-auto flex gap-2 bg-gray-500/10 py-2 my-3 px-4 sm:px-8 border-white border rounded-lg hover:bg-gray-800'>
           <PlusIcon className='h-6 w-6 text-white'/>
@@ -26,11 +26,11 @@ export default function Sidebar({toggler, setToggler}) {
 
         <div style={{
           position: "absolute",
-          display: size.width < 640 ? (toggler ? "inline-block"  :"none") : "none",
+          display: size.width < 768 ? (toggler ? "inline-block"  :"none") : "none",
           top: 6,
           right: -30,
       }}>
-          <XMarkIcon className="h-6 w-6 text-white my-4 border ml-4 sm:ml-0 hover:cursor-pointer" onClick={handleCancel}/>
+          <XMarkIcon className="h-6 w-6 text-white my-4 border ml-4 md:ml-0 hover:cursor-pointer" onClick={handleCancel}/>
         </div>
 
         <section className="py-3 my-3 text-gray-100 flex flex-col text-center">
@@ -39,7 +39,7 @@ export default function Sidebar({toggler, setToggler}) {
         </section>
 
         <section className="flex flex-col justify-between h-1/4 border-t-white border-t mx-3 my-4">
-          <button className="flex gap-2 sm:gap-5 hover:bg-[#8d8da01a] hover:rounded-md mt-2 py-2 ml-1 pl-3">
+          <button className="flex gap-2 md:gap-5 hover:bg-[#8d8da01a] hover:rounded-md mt-2 py-2 ml-1 pl-3">
             <UserIcon className='h-6 w-6'/>
             <span className=''>Upgrade to Plus</span>
             {/* <span className=''>NEW</span> */}
@@ -49,12 +49,12 @@ export default function Sidebar({toggler, setToggler}) {
             <span className=''>Light mode</span>
           </button> */}
           <a href="https://help.openai.com/en/collections/3742473-chatgpt" target="_blank" className='hover:bg-[#8d8da01a] mt-1 py-2 ml-1 pl-3 hover:rounded-md'>
-            <button className='flex gap-2 sm:gap-5 '>
+            <button className='flex gap-2 md:gap-5 '>
               <ArrowTopRightOnSquareIcon className='h-6 w-6'/>
               <span className=''>Updates & FAQs</span>
             </button>
           </a>
-          <button className="flex gap-2 sm:gap-5 hover:rounded-md hover:bg-[#8d8da01a] mt-2 py-2 ml-1 pl-3">
+          <button className="flex gap-2 md:gap-5 hover:rounded-md hover:bg-[#8d8da01a] mt-2 py-2 ml-1 pl-3">
             <ArrowRightOnRectangleIcon className='h-6 w-6'/>
             <span className=''>Log out</span>
           </button>

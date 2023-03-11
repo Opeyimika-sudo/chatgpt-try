@@ -9,7 +9,7 @@ export default function Main({toggler, setToggler }) {
   return (
     <div className="h-full flex-1" style={{backgroundColor: toggler ?  "#4d4f5f": "#343541"}}>
       <Navbar toggler={toggler} setToggler={setToggler} />
-      <Hero/>
+      <Hero toggler={toggler} setToggler={setToggler}/>
       <Chat />
     </div>
   )

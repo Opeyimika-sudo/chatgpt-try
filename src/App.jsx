@@ -8,7 +8,7 @@ function App() {
   const [toggler, setToggler] = React.useState(false);
 
   return (
-    <div className='flex relative w-screen h-screen'>
+    <div className='flex relative min-w-screen justify-between min-h-screen'>
       <Sidebar toggler={toggler} setToggler={setToggler}/>
       <Main toggler={toggler} setToggler={setToggler}/>
     </div>
