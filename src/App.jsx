@@ -1,12 +1,17 @@
 import React from 'react'
 import './App.css'
+import Sidebar from './components/Sidebar'
+import Main from './components/Main'
+import Navbar from './components/Navbar'
 
 function App() {
+  const [toggler, setToggler] = React.useState(false);
 
   return (
-    <h1 className="text-3xl font-bold underline text-center">
-      Hello world!
-    </h1> 
+    <div className='flex relative w-screen h-screen'>
+      <Sidebar toggler={toggler} setToggler={setToggler}/>
+      <Main toggler={toggler} setToggler={setToggler}/>
+    </div>
   )
 }
 
