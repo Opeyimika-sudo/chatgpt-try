@@ -1,7 +1,7 @@
 import React from 'react'
 import {SunIcon, BoltIcon, ExclamationTriangleIcon} from "@heroicons/react/24/outline"
 
-export default function Hero() {
+export default function Hero({input, setInput}) {
   return (
     <div className='h-[80%] overflow-auto w-4/5 mx-auto xl:overflow-hidden spacing-y-10 mb-10 text-white py-8 self-center px-4 scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md'>
       <h1 className="text-4xl font-semibold text-center mx-auto my-6 sm:mb-16 flex gap-2 items-center justify-center">ChatGPT</h1>
@@ -14,9 +14,9 @@ export default function Hero() {
               
               {/* </section> */}
               <section className="flex flex-col gap-3.5 w-full sm:max-w-md m-auto">
-                    <button className="bg-[#3e3f4b] p-3 rounded-md hover:bg-gray-900">Explain quantum computing in simple terms &#8594;</button>
-                    <button className=" bg-[#3e3f4b] p-3 rounded-md hover:bg-gray-900">Got any creative ideas for a 10 year old’s birthday? &#8594;</button>
-                    <button className="bg-[#3e3f4b] p-3 rounded-md hover:bg-gray-900">How do I make an HTTP request in Javascript? &#8594;</button>
+                    <button className="bg-[#3e3f4b] p-3 rounded-md hover:bg-gray-900" onClick={() => setInput("Explain quantum computing in simple terms")}>Explain quantum computing in simple terms &#8594;</button>
+                    <button className=" bg-[#3e3f4b] p-3 rounded-md hover:bg-gray-900" onClick={() => setInput("Got any creative ideas for a 10 year old’s birthday?")}>Got any creative ideas for a 10 year old’s birthday? &#8594;</button>
+                    <button className="bg-[#3e3f4b] p-3 rounded-md hover:bg-gray-900" onClick={() => setInput("How do I make an HTTP request in Javascript? ")}>How do I make an HTTP request in Javascript? &#8594;</button>
               </section>
           </section>
           <section className="flex flex-col mb-8 md:mb-auto gap-3.5 flex-1">

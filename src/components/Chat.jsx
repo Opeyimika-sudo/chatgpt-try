@@ -1,8 +1,7 @@
 import React from 'react'
 import {PaperAirplaneIcon} from "@heroicons/react/24/outline"
 
-export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, chatGPT}) {
-  const [input, setInput] = React.useState("")
+export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, chatGPT, input, setInput}) {
 
   React.useEffect(() => {
     document.addEventListener("keydown", detectKey)
