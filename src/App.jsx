@@ -11,12 +11,10 @@ function App() {
   const configuration = new Configuration({
     apiKey: import.meta.env.VITE_OPENAI_KEY
   });
-  console.log(import.meta.env.VITE_OPENAI_KEY)
 
   const openai = new OpenAIApi(configuration);
 
   const chatGPT = async (item, newChatHistory) => {
-    console.log("maybe today")
     try {
       const response = await openai.createCompletion({
       model: "text-davinci-003",

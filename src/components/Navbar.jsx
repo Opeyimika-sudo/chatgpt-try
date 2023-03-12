@@ -1,13 +1,7 @@
 import React from 'react'
 import {PlusIcon, Bars3Icon} from "@heroicons/react/24/outline"
-import useWindowSize from './useWindowSize';
 
 export default function Navbar({toggler, setToggler}) {
-    // const size = useWindowSize();
-
-    function handleClick(){
-        console.log("fuck");
-    }
 
     function handleToggle(){
         setToggler(true);
@@ -19,7 +13,7 @@ export default function Navbar({toggler, setToggler}) {
     }}>
         <Bars3Icon className="h-6 w-6 hover:cursor-pointer" onClick={handleToggle} />
         <h4 className="mx-auto">New Chat</h4>
-        <PlusIcon className="h-6 w-6 hover:cursor-pointer" onClick={handleClick}/>
+        <PlusIcon className="h-6 w-6 hover:cursor-pointer"/>
     </div>
   )
 }
