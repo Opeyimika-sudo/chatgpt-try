@@ -9,29 +9,17 @@ export default function Sidebar({toggler, setToggler}) {
     setToggler(false);
   }
 
-  
-
   return (
-    <div className='w-3/5 md:w-2/5 absolute h-full'
-      style={{
-        zIndex: size.width < 768 ? 1000 : 1,
-      }}>
-      <div className='w-4/5 flex-col justify-between border-white/20  h-screen bg-gray-900 text-white relative' style={{
-        display: size.width < 768 ? (toggler ? "flex"  :"none") : "inline-flex",
-      }}>
-        <button className='w-4/5 mx-auto flex gap-2 bg-gray-500/10 py-2 my-3 px-4 sm:px-8 border-white border rounded-lg hover:bg-gray-800'>
+    <div className='min-h-screen flex items-start justify-start '>
+      <div className={` ${
+          toggler ? 'w-48 px-2' : 'w-0 ',
+          toggler ? 'inline-block' : 'hidden'
+        } lg:w-72 lg:inline-flex bg-gray-900 h-screen flex flex-col justify-between relative duration-500 text-white border-white/20`}
+      >
+        <button className='w-4/5 mx-auto flex gap-2 bg-gray-500/10 py-2 my-3 px-2 md:px-8 border-white border rounded-lg hover:bg-gray-800'>
           <PlusIcon className='h-6 w-6 text-white'/>
           New Chat
         </button>
-
-        <div style={{
-          position: "absolute",
-          display: size.width < 768 ? (toggler ? "inline-block"  :"none") : "none",
-          top: 6,
-          right: -30,
-      }}>
-          <XMarkIcon className="h-6 w-6 text-white my-4 border ml-4 md:ml-0 hover:cursor-pointer" onClick={handleCancel}/>
-        </div>
 
         <section className="py-3 my-3 text-gray-100 flex flex-col text-center">
           <p className='italic text-gray-500'>Unable to load history</p>
@@ -60,7 +48,11 @@ export default function Sidebar({toggler, setToggler}) {
           </button>
         </section>
       </div>
+      <button className={`${toggler? "fixed": "hidden"} md:hidden z-50 mr-2 top-3
+      right-3 text-white border flex justify-center items-center duration-300`} onClick={handleCancel}>
+          <XMarkIcon className='w-6 h-6'/>
+      </button>
       
-    </div>
+  </div>
   )
 }
