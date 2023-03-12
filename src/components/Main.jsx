@@ -13,7 +13,7 @@ export default function Main({toggler, setToggler, setChatHistory, chatHistory, 
     <div className="flex-1 relative h-screen overflow-y-hidden" style={{backgroundColor: toggler ?  "#4d4f5f": "#343541"}}>
       <Navbar toggler={toggler} setToggler={setToggler} />
       {
-        chatHistory ? <ChatHistory chatHistory={chatHistory} setChatHistory={setChatHistory}/>
+        chatHistory.length !== 0 ? <ChatHistory chatHistory={chatHistory} setChatHistory={setChatHistory}/>
         : <Hero />
 
       }
