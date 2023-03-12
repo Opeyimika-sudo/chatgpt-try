@@ -32,13 +32,7 @@ function App() {
   } 
 
   const [toggler, setToggler] = React.useState(false);
-  const [chatHistory, setChatHistory] = React.useState([{
-    from: "me",
-    message: "She loves me" 
-  }, {
-    from: "ai",
-    message: "Here's your response"
-}])
+  const [chatHistory, setChatHistory] = React.useState([])
  
   return (
     <div className='grid min-h-screen grid-cols-[auto_1fr] justify-center overflow-hidden w-screen'>
