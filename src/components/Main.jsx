@@ -6,7 +6,7 @@ import ChatHistory from './ChatHistory'
 
 
 
-export default function Main({toggler, setToggler, setChatHistory, chatHistory, prompt, setPrompt, chatGPT}) {
+export default function Main({toggler, setToggler, setChatHistory, chatHistory, prompt, setPrompt, chatGPT, loader, setLoader}) {
   const [input, setInput] = React.useState("")
 
   return (
@@ -17,7 +17,7 @@ export default function Main({toggler, setToggler, setChatHistory, chatHistory, 
         : <Hero input={input} setInput={setInput}/>
 
       }
-      <Chat prompt={prompt} setPrompt={setPrompt} setChatHistory={setChatHistory} chatHistory={chatHistory} chatGPT={chatGPT} input={input} setInput={setInput}/>
+      <Chat prompt={prompt} setPrompt={setPrompt} setChatHistory={setChatHistory} chatHistory={chatHistory} chatGPT={chatGPT} input={input} setInput={setInput} loader={loader} setLoader={setLoader}/>
     </div>
   )
 }

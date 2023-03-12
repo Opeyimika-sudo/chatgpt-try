@@ -1,7 +1,8 @@
 import React from 'react'
 import {PaperAirplaneIcon} from "@heroicons/react/24/outline"
+import { Bars } from  'react-loader-spinner'
 
-export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, chatGPT, input, setInput}) {
+export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, chatGPT, input, setInput, loader, setLoader}) {
 
   React.useEffect(() => {
     document.addEventListener("keydown", detectKey)
@@ -14,6 +15,7 @@ export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, cha
   }
 
   async function handleSubmit(e) {
+    setLoader(true);
     e.preventDefault()
     if(input === ""){
       return ;
@@ -31,10 +33,20 @@ export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, cha
   return (
     <div className="fixed bottom-0 mx-auto w-full lg:w-4/5 pb-3 border-0 md:border-3 border-red md:border-transparent bg-gray-800 flex flex-wrap flex-col ">
       <form className="flex flex-col items-center relative py-2 mx-5 md:py-3 my-2 md:pl-4 border border-gray-900/50 text-white bg-gray-700 rounded-md shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]">
+      {loader
+          ? <Bars className="mx-auto text-center"
+          height="40"
+          width="80"
+          color="rgb(16,163,127)"
+          ariaLabel="bars-loading"
+          wrapperStyle={{}}
+          wrapperClass=""
+          visible={true}
+        />:
           <textarea name={input} type="text" value={input} rows="1" style={{maxHeight: "200px", 
             height: "24px",
             overflowY: "hidden"
-            }}className='m-0 w-full resize-none border-0 p-0 pl-2 pr-7 focus-visible:outline-0 bg-transparent md:pl-0' onChange={(e) => setInput(e.target.value)}/>
+            }}className='m-0 w-full resize-none border-0 p-0 pl-2 pr-7 focus-visible:outline-0 bg-transparent md:pl-0' onChange={(e) => setInput(e.target.value)}/>}
             <PaperAirplaneIcon className='absolute right-3 top-1 h-6 w-6 md:top-3 -rotate-45 hover:cursor-pointer hover:scale-110 hover:scale-lg-150' onClick={handleSubmit}/>
       </form>
       <footer className='mx-5 flex flex-wrap text-white'>
