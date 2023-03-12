@@ -10,8 +10,14 @@ This project involved building a responsive webpage using React and Tailwind CSS
 ### Overview
 ChatJibiti is a platform that you can tell anything and it will give you information that makes your life easier, faster and better in one breath.
 
+- It has a "give it a prompt and it will give you a response" feature
+- It has a loading spinner feature while the OpenAI API gets ready to serve you the response
+- It has an Error Boundary such that if there is an error in the API fetch, the error is caught
+- If you click on the New Chat button, it deletes the chat history and starts you afresh
+- Clicking the examples of prompts will put the prompt in your input for you to try
+
 ### Demo
-Soon to come
+![Demo of ChatJibiti](./src/assets/chatjibiti-clone.gif)
 
 ### Tech Stack
 
@@ -75,9 +81,7 @@ $ npm run dev
 
 ### Potential Additional Features
   
-1. Add an ErrorBoundary which displays a fallback UI if there's an error from the OpenAI API
-2. Add a Loading Spinner pending the time the OpenAI API comes back with a response
-3. Write tests using Jest for the app
-4. Keep an history of the prompts and responses if the user wants to retrace/reverse
+1. Write tests using Jest for the app
+2. Keep an history of the prompts and responses if the user wants to retrace/reverse
 
 
