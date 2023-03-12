@@ -1,9 +1,9 @@
 import React from 'react'
-import {SunIcon, BoltIcon, ExclamationTriangleIcon} from "@heroicons/react/24/outline" 
+import {SunIcon, BoltIcon, ExclamationTriangleIcon} from "@heroicons/react/24/outline"
 
-export default function Hero({ toggler, setToggler }) {
+export default function Hero() {
   return (
-  <div className='h-[80%] overflow-auto lg:overflow-hidden mb-10 text-white py-8 self-center px-4 scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md'>
+    <div className='h-[80%] overflow-auto w-4/5 mx-auto xl:overflow-hidden spacing-y-10 mb-10 text-white py-8 self-center px-4 scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md'>
       <h1 className="text-4xl font-semibold text-center mx-auto my-6 sm:mb-16 flex gap-2 items-center justify-center">ChatGPT</h1>
 
       

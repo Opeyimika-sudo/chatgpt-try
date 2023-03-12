@@ -2,13 +2,16 @@ import React from 'react'
 import {PlusIcon, XMarkIcon, UserIcon, ArrowTopRightOnSquareIcon, ArrowRightOnRectangleIcon} from '@heroicons/react/24/outline'
 import useWindowSize from './useWindowSize';
 
-export default function Sidebar({toggler, setToggler}) {
+export default function Sidebar({toggler, setToggler, chatHistory, setChatHistory}) {
   const size = useWindowSize();
     
   function handleCancel(){
     setToggler(false);
   }
 
+  function clearChat(){
+    setChatHistory([])
+  }
   return (
     <div className='min-h-screen flex items-start justify-start overflow-hidden'>
       <div className={` ${
@@ -17,7 +20,7 @@ export default function Sidebar({toggler, setToggler}) {
         }
          lg:w-72 lg:inline-flex bg-gray-900 h-screen flex flex-col justify-between relative duration-500 text-white border-white/20`}
       >
-        <button className='w-4/5 mx-auto flex gap-2 bg-gray-500/10 py-2 my-3 px-2 md:px-8 border-white border rounded-lg hover:bg-gray-800'>
+        <button className='w-4/5 mx-auto flex gap-2 bg-gray-500/10 py-2 my-3 px-2 md:px-8 border-white border rounded-lg hover:bg-gray-800' onClick={clearChat}>
           <PlusIcon className='h-6 w-6 text-white'/>
           New Chat
         </button>
