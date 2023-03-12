@@ -9,7 +9,7 @@ export default function Main({toggler, setToggler }) {
   const size = useWindowSize();
 
   return (
-    <div className="flex-1 flex-col" style={{backgroundColor: toggler ?  "#4d4f5f": "#343541"}}>
+    <div className="flex-1 relative overflow-y-hidden" style={{backgroundColor: toggler ?  "#4d4f5f": "#343541"}}>
       {/* <p>I love you</p> */}
       <Navbar toggler={toggler} setToggler={setToggler} />
       <Hero toggler={toggler} setToggler={setToggler}/>

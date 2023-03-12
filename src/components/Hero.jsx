@@ -3,7 +3,7 @@ import {SunIcon, BoltIcon, ExclamationTriangleIcon} from "@heroicons/react/24/ou
 
 export default function Hero({ toggler, setToggler }) {
   return (
-  <div className='h-[90%] overflow-auto  text-white py-8 self-center px-4 scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md'>
+  <div className='h-[90%] overflow-y-scroll  text-white py-8 self-center px-4 scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md'>
       <h1 className="text-4xl font-semibold text-center mx-auto my-10 sm:mb-16 flex gap-2 items-center justify-center">ChatGPT</h1>
 
       

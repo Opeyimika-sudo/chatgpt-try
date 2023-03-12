@@ -10,7 +10,7 @@ export default function Sidebar({toggler, setToggler}) {
   }
 
   return (
-    <div className='min-h-screen flex items-start justify-start '>
+    <div className='min-h-screen flex items-start justify-start overflow-hidden'>
       <div className={` ${
           toggler ? 'w-48 px-2' : 'w-0 ',
           toggler ? 'inline-block' : 'hidden'
