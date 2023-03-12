@@ -3,8 +3,8 @@ import {SunIcon, BoltIcon, ExclamationTriangleIcon} from "@heroicons/react/24/ou
 
 export default function Hero({ toggler, setToggler }) {
   return (
-  <div className='h-[90%] overflow-y-scroll  text-white py-8 self-center px-4 scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md'>
-      <h1 className="text-4xl font-semibold text-center mx-auto my-10 sm:mb-16 flex gap-2 items-center justify-center">ChatGPT</h1>
+  <div className='h-[80%] overflow-auto lg:overflow-hidden mb-10 text-white py-8 self-center px-4 scrollbar-thumb-slate-400 scrollbar-thin scrollbar-track-gray-transparent scrollbar-thumb-rounded-md'>
+      <h1 className="text-4xl font-semibold text-center mx-auto my-6 sm:mb-16 flex gap-2 items-center justify-center">ChatGPT</h1>
 
       
       <section className="md:flex items-start text-center gap-3.5">
@@ -27,7 +27,7 @@ export default function Hero({ toggler, setToggler }) {
                     <p className="p-3 rounded-md bg-white/5">Trained to decline inappropriate requests</p>
               </section>
           </section>
-          <section className='flex flex-col mb-8 md:mb-auto gap-3.5 flex-1'>
+          <section className='flex flex-col mb-8  gap-3.5 flex-1'>
               <h2 className="flex gap-3 items-center m-auto text-lg font-normal md:flex-col md:gap-2"><ExclamationTriangleIcon className='h-6 w-6'/>Limitations</h2>
               <section className="flex flex-col gap-3.5 w-full sm:max-w-md m-auto">
                     <p className='p-3 rounded-md bg-white/5'>May occasionally generate incorrect information</p>

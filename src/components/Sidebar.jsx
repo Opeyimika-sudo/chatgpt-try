@@ -12,9 +12,10 @@ export default function Sidebar({toggler, setToggler}) {
   return (
     <div className='min-h-screen flex items-start justify-start overflow-hidden'>
       <div className={` ${
-          toggler ? 'w-48 px-2' : 'w-0 ',
+          toggler ? 'w-48 px-2' : 'w-0',
           toggler ? 'inline-block' : 'hidden'
-        } lg:w-72 lg:inline-flex bg-gray-900 h-screen flex flex-col justify-between relative duration-500 text-white border-white/20`}
+        }
+         lg:w-72 lg:inline-flex bg-gray-900 h-screen flex flex-col justify-between relative duration-500 text-white border-white/20`}
       >
         <button className='w-4/5 mx-auto flex gap-2 bg-gray-500/10 py-2 my-3 px-2 md:px-8 border-white border rounded-lg hover:bg-gray-800'>
           <PlusIcon className='h-6 w-6 text-white'/>
