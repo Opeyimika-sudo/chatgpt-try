@@ -3,27 +3,31 @@ import {PaperAirplaneIcon} from "@heroicons/react/24/outline"
 import { Bars } from  'react-loader-spinner'
 
 export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, chatGPT, input, setInput, loader, setLoader}) {
+  
+  const detectKey = React.useCallback((e) => {
+    console.log(e.key)
+    if(e.key === "Enter" && e.key !== "Shift"){
+      setInput(`${input}${e.key}`)
+      handleSubmit(e);
+    }
+  }, [input])
 
   React.useEffect(() => {
     document.addEventListener("keydown", detectKey)
-  }, [])
 
-  function detectKey(e){
-    if(e.key === "Enter" && e.key !== "Shift"){
-      handleSubmit(e);
-    }
-  }
+    return () => document.removeEventListener("keydown", detectKey);
+  }, [detectKey])
+
 
   async function handleSubmit(e) {
-    setLoader(true);
-    e.preventDefault()
+   
     if(input === ""){
       return ;
     }
-    await setPrompt(input);
     let newChatHistory = [...chatHistory, {from: "me", message: input}];
     setChatHistory(newChatHistory);
     setInput("")
+    setLoader(true);
 
     const messages = newChatHistory.map((message) => (message.message)).join("\n")
     await chatGPT(messages, newChatHistory);
@@ -46,7 +50,7 @@ export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, cha
           <textarea name={input} type="text" value={input} rows="1" style={{maxHeight: "200px", 
             height: "24px",
             overflowY: "hidden"
-            }}className='m-0 w-full resize-none border-0 p-0 pl-2 pr-7 focus-visible:outline-0 bg-transparent md:pl-0' onChange={(e) => setInput(e.target.value)}/>}
+            }}className='m-0 w-full resize-none border-0 p-0 pl-2 pr-7 focus-visible:outline-0 bg-transparent md:pl-0' onChange={(e) => setInput(e.target.value)} autoFocus />}
             <PaperAirplaneIcon className='absolute right-3 top-1 h-6 w-6 md:top-3 -rotate-45 hover:cursor-pointer hover:scale-110 hover:scale-lg-150' onClick={handleSubmit}/>
       </form>
       <footer className='mx-5 flex flex-wrap text-white'>
