@@ -5,7 +5,6 @@ import { Bars } from  'react-loader-spinner'
 export default function Chat({prompt, setPrompt,setChatHistory, chatHistory, chatGPT, input, setInput, loader, setLoader}) {
   
   const detectKey = React.useCallback((e) => {
-    console.log(e.key)
     if(e.key === "Enter" && e.key !== "Shift"){
       setInput(`${input}${e.key}`)
       handleSubmit(e);
